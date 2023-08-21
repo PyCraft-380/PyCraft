@@ -18,7 +18,8 @@
         </tr>
     </thead>
     <tbody>
-    {%for prod_id, item in order.order_items.items()%}
+    {% set order_items = json.loads(order.order_items) %}
+    {%for prod_id, item in order_items.items()%}
         <tr>
             <td>{{ item['brand'] }}</td>
             <td>{{item['quantity']}}x {{ item['name'] }}</td>
