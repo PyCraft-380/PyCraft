@@ -25,7 +25,7 @@ psycopg2-binary==2.9.7
 Pygments==2.16.1
 PyMySQL==1.1.0
 pytest==7.4.0
-python-dotenv==1.0.0
+python-dotenv==0.21.1
 requests==2.31.0
 snowballstemmer==2.2.0
 Sphinx==6.2.1
