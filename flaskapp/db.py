@@ -17,6 +17,8 @@
 from flask import Blueprint, render_template, session
 from flask_login import current_user, UserMixin
 from flask_sqlalchemy import SQLAlchemy
+import os
+from dotenv import load_dotenv
 
 from . import app
 
@@ -24,7 +26,9 @@ from . import app
 db_blueprint = Blueprint('db', __name__)
 
 #app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql+pymysql://sql9635613:aL1s9kYG4G@sql9.freemysqlhosting.net:3306/sql9635613'
-app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///pycraft.db'
+load_dotenv()
+app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv('DATABASE_URL')
+#postgres://pycraftdb_user:dR7HQ3yGWKjCbZ2d0RaPJZrSHKw0ACtK@dpg-cjhcotb6fquc73b6g82g-a.oregon-postgres.render.com/pycraftdb
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_MAX_OVERFLOW'] = 5000
 app.config['SQLALCHEMY_POOL_SIZE'] = 500
