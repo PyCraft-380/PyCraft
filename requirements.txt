@@ -31,4 +31,3 @@ snowballstemmer==2.2.0
 SQLAlchemy==2.0.19
 typing_extensions==4.7.1
 urllib3==2.0.4
-Werkzeug==2.3.6
