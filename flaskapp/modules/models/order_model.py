@@ -24,7 +24,10 @@ class Orders(db.Model):
     shipping_type = db.Column(db.String(50))
     address = db.Column(db.String(100))
     price = db.Column(db.Float)
-        
+
+    def __repr__(self):
+        return f'<Order ID: {self.order_id}. Owner {self.owner_id}>'
+    
     def get_order_items(self):
         return self.order_items
     
